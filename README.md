@@ -1,15 +1,14 @@
 # Dark Factory — Mini Factory pocketful (BAND track)
 
-![demo](https://img.shields.io/badge/demo-live-brightgreen) ![ci](https://img.shields.io/badge/ci-pytest-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+![demo](https://img.shields.io/badge/demo-live-brightgreen) [![ci](https://github.com/pham-canh/dark-factory/actions/workflows/ci.yml/badge.svg)](https://github.com/pham-canh/dark-factory/actions/workflows/ci.yml) ![license](https://img.shields.io/badge/license-MIT-green)
 
-Event: https://lablab.ai/ai-hackathons/wearedevelopers-hackathon | Track: pocketful | Demo: https://dark-factory.streamlit.app/ | Video: (quay xong điền YouTube unlisted)
+Event: https://lablab.ai/ai-hackathons/wearedevelopers-hackathon | Track: pocketful | Demo: https://dark-factory.streamlit.app/
 
 > Software factory kiểm chứng ví tiền: spec 1 trang → code → evaluator độc lập chấm conservation — cho solo dev ship tính năng tiền bạc không cần đọc từng diff. 5/5 holdout, ~609 tokens/task.
 
 ## Demo
 
 - Live: https://dark-factory.streamlit.app/ (bấm Run factory là chạy cả LOOP)
-- Video 3.5–4.5 phút: (quay xong điền YouTube unlisted)
 
 ## Chạy (5 phút, không hỏi thêm)
 

@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -r requirements-dev.txt
+      # App dependencies are installed as a separate step on purpose. The
+      # smoke test only reaches src/factory.py, which imports nothing outside
+      # the stdlib, so a break in streamlit pinning must fail as a dependency
+      # error rather than as a confusing collection error in the test step.
+      - name: install app dependencies
+        run: pip install -r requirements.txt
+      # PYTEST_DISABLE_PLUGIN_AUTOLOAD mirrors the command in the README: a
+      # stray third-party pytest plugin in the runner image can otherwise
+      # break collection for a suite that passes on a clean install.
+      - name: smoke test
+        run: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest src/ -q
